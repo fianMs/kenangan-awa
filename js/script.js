@@ -6,21 +6,25 @@ document.querySelector("#hamburger-menu").onclick = () => {
   navbarNav.classList.toggle("active");
 };
 
-// toggle class active untuk search form
+// Toggle class active untuk search form
 const searchForm = document.querySelector(".search-form");
 const searchBox = document.querySelector("#search-box");
-const shoppingCart = document.querySelector(".shopping-cart");
 
 document.querySelector("#search-button").onclick = (e) => {
   searchForm.classList.toggle("active");
   searchBox.focus();
   e.preventDefault();
 };
-document.querySelector("#shopping-cart-button").onclick = () => {
+
+// Shopping cart button
+const shoppingCart = document.querySelector(".shopping-cart");
+
+document.querySelector("#shopping-cart-button").onclick = (e) => {
   shoppingCart.classList.toggle("active");
+  e.preventDefault();
 };
 
-// click diluar elemen
+// Click diluar element
 const hm = document.querySelector("#hamburger-menu");
 const sb = document.querySelector("#search-button");
 const sc = document.querySelector("#shopping-cart-button");
@@ -36,3 +40,12 @@ document.addEventListener("click", function (e) {
     shoppingCart.classList.remove("active");
   }
 });
+
+// Modal box
+const itemDetailModal = document.querySelector("#item-detail-modal");
+const itemDetailButton = document.querySelector(".item-detail-button");
+
+itemDetailButton.onclick = (e) => {
+  itemDetailModal.style.display = "flex";
+  e.preventDefault();
+};
